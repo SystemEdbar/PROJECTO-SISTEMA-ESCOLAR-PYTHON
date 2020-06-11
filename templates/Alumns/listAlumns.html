@@ -1,0 +1,27 @@
+{% extends 'Design.html' %}
+{% block title %}
+    Lista de Productos
+{% endblock %}
+
+{% block body %}
+    <div class="col">
+    <h1 class="text-center">{{ message }}</h1>
+        <a href="http://127.0.0.1:8000/admin/Alumns/alumn/" class="btn btn-success"> Añadir un Nuevo Registro</a>
+        <div class="row">
+            {% for object in object_list %}
+                <div class="col-3 mt-3">
+                    <div class="card h-300">
+                        {% if object.imageAlumn %}
+                            <img src="{{ object.imageAlumn.url }}" alt="Imagen del Producto" width="250"></img>
+                        {% endif %}
+                        <div>
+                            <h5 class="card-title">{{ object.carnetAlumn }}</h5>
+                            <p class="card-title"> {{ object.nameAlumn}} </p>
+                            <a href="{%  url 'Alumn' object.slug %}" class="btn btn-primary">Ver más...</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

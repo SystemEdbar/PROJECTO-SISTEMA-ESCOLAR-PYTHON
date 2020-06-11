@@ -1,0 +1,27 @@
+{% extends 'Design.html' %}
+{% block title %}
+    REGISTER USER
+{% endblock %}
+
+{% block body %}
+    <div class="col-12">
+    {% include 'Users/message.html' %}
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="col-12">
+        <h1>Registro de Usuarios</h1>
+        </div>
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+
+                {% if field.errors %}
+                    {{ field.errors }}
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">REGISTRAR</button>
+    </form>
+{% endblock %}

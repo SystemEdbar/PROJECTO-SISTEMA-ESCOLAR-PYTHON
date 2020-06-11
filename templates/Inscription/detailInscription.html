@@ -1,0 +1,19 @@
+{% extends 'Design.html' %}
+{% block title %}
+    Alumnos
+{% endblock %}
+
+{% block body %}
+    <div>
+        <a href="{% url 'listInscription' %}" class="btn btn-primary">Regresar</a>
+    </div>
+    <div class="col ml-5">
+        <div class="h1 font-weight-bold">
+            Numero de Inscription: <span class="text-success">{{ object.numberInscription }}</span>
+        </div>
+        <div class="h2">Alumno: {{object.nameAlumn}}</div>
+        <div class="h2">Grado: {{object.nameGrade }}</div>
+        <div class="h2">Seccion: {{object.nameSection }}</div>
+        <div class="h2">Fecha: {{object.dateCreate }}</div>
+    </div>
+{% endblock %}

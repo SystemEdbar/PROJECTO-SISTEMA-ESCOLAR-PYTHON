@@ -1,0 +1,24 @@
+{% extends 'Design.html' %}
+{% block title %}
+    Lista de Productos
+{% endblock %}
+
+{% block body %}
+    <div class="col">
+    <h1 class="text-center">{{ message }}</h1>
+        <a href="http://127.0.0.1:8000/admin/Section/section/" class="btn btn-success"> Añadir un Nuevo Registro</a>
+        <div class="row">
+            {% for object in object_list %}
+                <div class="col-3 mt-3">
+                    <div class="card h-300">
+                        <div>
+                            <h3 class="card-title">{{ object.nameSection }}</h3>
+                            <h5 class="card-title">{{ object.workingDay }}</h5>
+                            <a href="{%  url 'Section' object.slug %}" class="btn btn-primary">Ver más...</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

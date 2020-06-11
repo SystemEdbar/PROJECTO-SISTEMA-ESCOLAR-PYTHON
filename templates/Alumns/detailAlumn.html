@@ -1,0 +1,25 @@
+{% extends 'Design.html' %}
+{% block title %}
+    Alumnos
+{% endblock %}
+
+{% block body %}
+    <div>
+        <a href="{% url 'listAlumns' %}" class="btn btn-primary">Regresar</a>
+    </div>
+    <div class="col-3">
+    {% if object.imageAlumn %}
+        <img src="{{ object.imageAlumn.url }}" alt="Imagen del Producto" width="300">
+    {% endif %}
+    </div>
+    <div class="col ml-5">
+        <div class="h1 font-weight-bold">
+            Carnet: <span class="text-success">{{ object.carnetAlumn }}</span>
+        </div>
+        <div class="h2">Nombres: {{object.nameAlumn }}</div>
+        <div class="h2">Apellidos: {{object.surnameAlumn }}</div>
+        <div class="h3">
+            <p>Direccion: {{ object.directionAlumn }}</p>
+        </div>
+    </div>
+{% endblock %}

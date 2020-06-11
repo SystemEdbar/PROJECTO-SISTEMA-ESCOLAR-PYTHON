@@ -1,0 +1,17 @@
+{% extends 'Design.html' %}
+{% block title %}
+    Alumnos
+{% endblock %}
+
+{% block body %}
+    <div>
+        <a href="{% url 'listGrade' %}" class="btn btn-primary">Regresar</a>
+    </div>
+    <div class="col ml-5">
+        <div class="h1 font-weight-bold">
+            Nombre del Grado: <span class="text-success">{{ object.nameGrade }}</span>
+        </div>
+        <div class="h2">Horario: {{object.timeTable }}</div>
+        <div class="h2">Creacion: {{object.dateCreate }}</div>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'Design.html' %}
+{% block title %}
+    LOGIN
+{% endblock %}
+
+{% block body %}
+    <div class="col-12">
+    {% include 'Users/message.html' %}
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="col-12">
+        <h1>INICIO DE SESION</h1>
+        </div>
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">INICIAR SESION</button>
+    </form>
+{% endblock %}
